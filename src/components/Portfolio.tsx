@@ -27,7 +27,7 @@ export default function Portfolio() {
       category: 'Gastronomia',
       title: 'Cardápio Digital',
       description: 'Implementação de um cardápio digital com QR Code para restaurantes e cafeterias, permitindo fácil atualização e visualização dos produtos.',
-      tags: ['React', 'Firebase', 'QR Code', 'Painel Admin'],
+      tags: ['React', 'Supabase', 'QR Code', 'Painel Admin'],
       color: 'from-orange-500 to-red-500',
       link: 'https://seven-cardapio.netlify.app/'
     },
@@ -35,7 +35,7 @@ export default function Portfolio() {
       category: 'Serviços',
       title: 'Landing Page',
       description: 'Desenvolvimento de uma landing page de alta conversão para o lançamento de um produto ou serviço, com foco em captação de inscrições.',
-      tags: ['Next.js', 'Tailwind CSS', 'Formulários', 'Marketing'],
+      tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
       color: 'from-purple-500 to-pink-500',
       link: 'https://louresadv.com.br/'
     },
