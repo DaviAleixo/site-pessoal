@@ -1,4 +1,4 @@
-import { Globe, Zap, QrCode, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Globe, Zap, QrCode, ShoppingBag } from 'lucide-react';
 
 // Seção de Serviços com cards detalhados
 export default function Services() {
@@ -86,24 +86,13 @@ export default function Services() {
                 </p>
 
                 {/* Features */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full"></div>
                       <span className="text-gray-300 text-sm">{feature}</span>
                     </div>
                   ))}
-                </div>
-
-                {/* Botão de ação */}
-                <div className="mt-auto">
-                  <button className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors">
-                    <span className="font-semibold">Saiba mais</span>
-                    <ArrowRight
-                      size={18}
-                      className="group-hover/btn:translate-x-1 transition-transform"
-                    />
-                  </button>
                 </div>
 
                 {/* Efeito de brilho no hover */}
