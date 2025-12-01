@@ -91,7 +91,6 @@ export default function Footer() {
               <li>Landing Pages</li>
               <li>Cardápio Digital</li>
               <li>Catálogo Virtual</li>
-              <li>Consultoria Web</li>
             </ul>
           </div>
 

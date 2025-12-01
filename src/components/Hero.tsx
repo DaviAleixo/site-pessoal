@@ -2,6 +2,18 @@ import { ArrowRight, Code2 } from 'lucide-react';
 
 // Seção Hero principal com título, subtítulo e CTAs
 export default function Hero() {
+  const whatsappNumber = '5531982607426';
+  const whatsappMessage = encodeURIComponent(
+    'Olá Davi! Vi seu site e gostaria de conversar sobre um projeto.'
+  );
+
+  const handleWhatsAppClick = () => {
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+      '_blank'
+    );
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -36,7 +48,7 @@ export default function Hero() {
             {/* Botões de ação */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => scrollToSection('contato')}
+                onClick={handleWhatsAppClick}
                 className="group bg-[#0EA5E9] hover:bg-[#0EA5E9]/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg shadow-[#0EA5E9]/30 hover:shadow-[#0EA5E9]/50 hover:scale-105"
               >
                 <span>Solicitar Orçamento</span>
@@ -44,10 +56,10 @@ export default function Hero() {
               </button>
 
               <button
-                onClick={() => scrollToSection('portfolio')}
+                onClick={() => scrollToSection('servicos')}
                 className="border-2 border-gray-700 hover:border-[#0EA5E9] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               >
-                Ver Portfólio
+                Ver Serviços
               </button>
             </div>
 

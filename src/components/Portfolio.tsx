@@ -2,48 +2,17 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 
 // Seção de Portfólio com projetos fictícios realistas
 export default function Portfolio() {
-  const projects = [
-    {
-      title: 'Restaurante Sabor & Arte',
-      category: 'Cardápio Digital',
-      description:
-        'Cardápio digital completo com QR Code para restaurante regional. Interface intuitiva com fotos dos pratos, categorias organizadas e descrições detalhadas.',
-      tags: ['React', 'QR Code', 'Responsive'],
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      title: 'Loja Estilo Urbano',
-      category: 'Catálogo Virtual',
-      description:
-        'Catálogo digital de moda com integração direta ao WhatsApp. Galeria de produtos com filtros, zoom nas imagens e botão de compra em cada item.',
-      tags: ['E-commerce', 'WhatsApp', 'Galeria'],
-      color: 'from-pink-500 to-rose-600'
-    },
-    {
-      title: 'Advocacia & Consultoria',
-      category: 'Site Profissional',
-      description:
-        'Site institucional para escritório de advocacia com áreas de atuação, equipe, blog jurídico e formulário de contato integrado.',
-      tags: ['Institucional', 'Blog', 'SEO'],
-      color: 'from-blue-600 to-indigo-600'
-    },
-    {
-      title: 'Academia Corpo Forte',
-      category: 'Landing Page',
-      description:
-        'Landing page focada em conversão para captação de alunos. Planos, depoimentos, galeria de fotos e formulário de teste grátis.',
-      tags: ['Landing Page', 'Conversão', 'Forms'],
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      title: 'Imobiliária Lar Perfeito',
-      category: 'Site Profissional',
-      description:
-        'Portal imobiliário com listagem de imóveis, busca avançada, galeria de fotos, mapa de localização e formulário para agendamento de visitas.',
-      tags: ['Portal', 'Busca', 'Maps'],
-      color: 'from-cyan-500 to-blue-500'
-    }
-  ];
+  const whatsappNumber = '5531982607426';
+  const whatsappMessage = encodeURIComponent(
+    'Olá Davi! Vi seu site e gostaria de conversar sobre um projeto.'
+  );
+
+  const handleWhatsAppClick = () => {
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+      '_blank'
+    );
+  };
 
   return (
     <section id="portfolio" className="bg-gradient-to-b from-gray-900 to-black py-20 lg:py-32">
@@ -158,10 +127,7 @@ export default function Portfolio() {
             Quer conhecer mais projetos ou discutir o seu?
           </p>
           <button
-            onClick={() => {
-              const element = document.getElementById('contato');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={handleWhatsAppClick}
             className="group inline-flex items-center space-x-2 bg-gradient-to-r from-[#0EA5E9] to-blue-600 hover:from-[#0EA5E9]/90 hover:to-blue-600/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-[#0EA5E9]/30"
           >
             <span>Vamos conversar sobre seu projeto</span>

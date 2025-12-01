@@ -16,7 +16,7 @@ export default function Services() {
       title: 'Landing Pages',
       description:
         'Páginas focadas em conversão para capturar leads e aumentar suas vendas. Ideal para campanhas, lançamentos de produtos ou serviços específicos.',
-      features: ['Alta Conversão', 'Integração com Forms', 'Analytics Integrado'],
+      features: ['Alta Conversão', 'Mini Blog personalizado', 'Design Responsivo'],
       color: 'from-[#0EA5E9] to-blue-600'
     },
     {
@@ -24,7 +24,7 @@ export default function Services() {
       title: 'Cardápio Digital com QR Code',
       description:
         'Cardápios digitais modernos para restaurantes e lanchonetes. Seus clientes acessam o menu pelo celular usando QR Code, sem contato físico e com fotos atrativas.',
-      features: ['QR Code Incluído', 'Fotos dos Pratos', 'Fácil Atualização'],
+      features: ['QR Code Incluído', 'Fotos dos Pratos', 'Fácil Atualização', 'Painel Administrativo Exclusivo'],
       color: 'from-green-500 to-emerald-600'
     },
     {
