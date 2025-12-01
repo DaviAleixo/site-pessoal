@@ -4,28 +4,28 @@ import { Quote, Star } from 'lucide-react';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Maria Fernanda Silva',
-      role: 'Proprietária - Restaurante Tempero Caseiro',
+      name: 'Emanuelle',
+      role: 'Loures Advocacia',
       content:
-        'O Davi criou um cardápio digital incrível para meu restaurante. Agora meus clientes acessam tudo pelo celular com QR Code. As vendas aumentaram e o atendimento ficou muito mais prático!',
+        'Davi, passando para te dar um feedback referente ao site... Ficou maravilhoso, só elogios 😍. Ficou lindo, funcional e o sistema do blog está ajudando demais. Só tenho a agradecer pela atenção e trabalho!!!! 💖💖💖',
       rating: 5,
-      avatar: 'MF'
+      avatar: 'EM'
     },
     {
-      name: 'Carlos Eduardo Santos',
-      role: 'Advogado - Santos Advocacia',
+      name: 'Igor Morais',
+      role: 'Cliente Satisfeito',
       content:
-        'Precisava de um site profissional e o resultado superou minhas expectativas. Design moderno, rápido e totalmente responsivo. Recebi vários elogios de clientes e colegas da área.',
+        'Irmão ficou perfeito o site, muito bem detalhado, da pra ver que tu faz com carinho, estética ótima, não trava, ela vai amar viu tu é dedicado demais',
       rating: 5,
-      avatar: 'CE'
+      avatar: 'IM'
     },
     {
-      name: 'Ana Paula Oliveira',
-      role: 'Empreendedora - Loja Virtual de Moda',
+      name: 'Marcelo Augusto',
+      role: 'Empreendedor',
       content:
-        'Meu catálogo digital ficou perfeito! Os clientes conseguem ver todos os produtos com fotos lindas e comprar direto pelo WhatsApp. O Davi foi super atencioso e entregou tudo no prazo.',
+        'A landing page ficou exatamente como eu pedi, superou todas as minhas expectativas! O design é lindo e a funcionalidade impecável. Excelente trabalho!',
       rating: 5,
-      avatar: 'AP'
+      avatar: 'MA'
     }
   ];
 
