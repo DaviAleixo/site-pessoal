@@ -65,7 +65,7 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#0EA5E9]/10"
+                className="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#0EA5E9]/10 flex flex-col"
               >
                 {/* Ícone do serviço */}
                 <div className="mb-6">
@@ -81,7 +81,7 @@ export default function Services() {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-gray-400 mb-6 leading-relaxed flex-grow">
                   {service.description}
                 </p>
 
@@ -96,13 +96,15 @@ export default function Services() {
                 </div>
 
                 {/* Botão de ação */}
-                <button className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors">
-                  <span className="font-semibold">Saiba mais</span>
-                  <ArrowRight
-                    size={18}
-                    className="group-hover/btn:translate-x-1 transition-transform"
-                  />
-                </button>
+                <div className="mt-auto">
+                  <button className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors">
+                    <span className="font-semibold">Saiba mais</span>
+                    <ArrowRight
+                      size={18}
+                      className="group-hover/btn:translate-x-1 transition-transform"
+                    />
+                  </button>
+                </div>
 
                 {/* Efeito de brilho no hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>

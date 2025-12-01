@@ -75,7 +75,7 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl overflow-hidden hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#0EA5E9]/10"
+              className="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl overflow-hidden hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#0EA5E9]/10 flex flex-col"
             >
               {/* Mockup visual do projeto */}
               <div className="relative h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
@@ -117,7 +117,7 @@ export default function Portfolio() {
               </div>
 
               {/* Informações do projeto */}
-              <div className="p-6 space-y-4">
+              <div className="p-6 space-y-4 flex flex-col flex-grow">
                 <div>
                   <span className="text-[#0EA5E9] text-sm font-medium">
                     {project.category}
@@ -127,7 +127,7 @@ export default function Portfolio() {
                   </h3>
                 </div>
 
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed flex-grow">
                   {project.description}
                 </p>
 
@@ -144,28 +144,30 @@ export default function Portfolio() {
                 </div>
 
                 {/* Botão de ação */}
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
-                  >
-                    <span className="font-semibold text-sm">Ver detalhes</span>
-                    <ExternalLink
-                      size={16}
-                      className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                    />
-                  </a>
-                ) : (
-                  <button className="group/btn inline-flex items-center space-x-2 text-gray-500 cursor-not-allowed pt-2">
-                    <span className="font-semibold text-sm">Ver detalhes</span>
-                    <ExternalLink
-                      size={16}
-                      className=""
-                    />
-                  </button>
-                )}
+                <div className="mt-auto">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                    >
+                      <span className="font-semibold text-sm">Ver detalhes</span>
+                      <ExternalLink
+                        size={16}
+                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                      />
+                    </a>
+                  ) : (
+                    <button className="group/btn inline-flex items-center space-x-2 text-gray-500 cursor-not-allowed pt-2">
+                      <span className="font-semibold text-sm">Ver detalhes</span>
+                      <ExternalLink
+                        size={16}
+                        className=""
+                      />
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           ))}
