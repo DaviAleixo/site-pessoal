@@ -55,7 +55,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105"
+              className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 flex flex-col"
             >
               {/* Ícone de aspas */}
               <div className="absolute -top-4 left-8">
@@ -72,12 +72,12 @@ export default function Testimonials() {
               </div>
 
               {/* Conteúdo do depoimento */}
-              <p className="text-gray-300 leading-relaxed mb-6 italic">
+              <p className="text-gray-300 leading-relaxed mb-6 italic flex-grow">
                 "{testimonial.content}"
               </p>
 
               {/* Informações do cliente */}
-              <div className="flex items-center space-x-4 pt-6 border-t border-gray-800">
+              <div className="flex items-center space-x-4 pt-6 border-t border-gray-800 mt-auto">
                 {/* Avatar */}
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0EA5E9] to-blue-600 flex items-center justify-center flex-shrink-0">
                   <span className="text-white font-bold text-sm">
@@ -86,9 +86,9 @@ export default function Testimonials() {
                 </div>
 
                 {/* Nome e cargo */}
-                <div className="flex flex-col space-y-0.5"> {/* Adicionado flex-col e space-y-0.5 */}
-                  <h4 className="text-white font-semibold m-0">{testimonial.name}</h4> {/* Adicionado m-0 */}
-                  <p className="text-gray-400 text-sm m-0">{testimonial.role}</p> {/* Adicionado m-0 */}
+                <div className="flex flex-col">
+                  <h4 className="text-white font-semibold leading-tight">{testimonial.name}</h4>
+                  <p className="text-gray-400 text-sm leading-tight">{testimonial.role}</p>
                 </div>
               </div>
 
