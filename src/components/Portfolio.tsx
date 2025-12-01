@@ -14,6 +14,51 @@ export default function Portfolio() {
     );
   };
 
+  const projects = [
+    {
+      category: 'Web Design',
+      title: 'Site Institucional para Consultoria',
+      description: 'Desenvolvimento de um site moderno e responsivo para uma consultoria de negócios, focado em apresentar serviços e capturar leads.',
+      tags: ['React', 'Tailwind CSS', 'Responsivo', 'SEO'],
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      category: 'E-commerce',
+      title: 'Catálogo Digital de Produtos Artesanais',
+      description: 'Criação de um catálogo online interativo para uma loja de artesanato, com integração direta para vendas via WhatsApp.',
+      tags: ['HTML', 'CSS', 'JavaScript', 'WhatsApp API'],
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      category: 'Gastronomia',
+      title: 'Cardápio Digital para Cafeteria',
+      description: 'Implementação de um cardápio digital com QR Code para uma cafeteria, permitindo fácil atualização e visualização dos produtos.',
+      tags: ['React', 'Firebase', 'QR Code', 'Painel Admin'],
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      category: 'Serviços',
+      title: 'Landing Page para Lançamento de Curso',
+      description: 'Desenvolvimento de uma landing page de alta conversão para o lançamento de um curso online, com foco em captação de inscrições.',
+      tags: ['Next.js', 'Tailwind CSS', 'Formulários', 'Marketing'],
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      category: 'Negócios Locais',
+      title: 'Site para Salão de Beleza',
+      description: 'Criação de um site elegante para um salão de beleza, com informações sobre serviços, galeria de fotos e formulário de contato.',
+      tags: ['WordPress', 'Elementor', 'Responsivo', 'Galeria'],
+      color: 'from-pink-500 to-red-400'
+    },
+    {
+      category: 'Tecnologia',
+      title: 'Portfólio Online para Desenvolvedor',
+      description: 'Desenvolvimento de um portfólio pessoal para um desenvolvedor, destacando projetos, habilidades e informações de contato.',
+      tags: ['React', 'TypeScript', 'Vite', 'Animações'],
+      color: 'from-[#0EA5E9] to-blue-400'
+    }
+  ];
+
   return (
     <section id="portfolio" className="bg-gradient-to-b from-gray-900 to-black py-20 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
