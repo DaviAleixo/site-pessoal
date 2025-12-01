@@ -86,9 +86,9 @@ export default function Testimonials() {
                 </div>
 
                 {/* Nome e cargo */}
-                <div>
-                  <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                <div className="flex flex-col space-y-0.5"> {/* Adicionado flex-col e space-y-0.5 */}
+                  <h4 className="text-white font-semibold m-0">{testimonial.name}</h4> {/* Adicionado m-0 */}
+                  <p className="text-gray-400 text-sm m-0">{testimonial.role}</p> {/* Adicionado m-0 */}
                 </div>
               </div>
 
