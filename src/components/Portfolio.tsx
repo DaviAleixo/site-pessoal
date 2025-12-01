@@ -17,45 +17,35 @@ export default function Portfolio() {
   const projects = [
     {
       category: 'Web Design',
-      title: 'Site Institucional para Consultoria',
-      description: 'Desenvolvimento de um site moderno e responsivo para uma consultoria de negócios, focado em apresentar serviços e capturar leads.',
+      title: 'Site Institucional',
+      description: 'Desenvolvimento de um site moderno e responsivo para sua empresa, focado em apresentar serviços e capturar leads.',
       tags: ['React', 'Tailwind CSS', 'Responsivo', 'SEO'],
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      category: 'E-commerce',
-      title: 'Catálogo Digital de Produtos Artesanais',
-      description: 'Criação de um catálogo online interativo para uma loja de artesanato, com integração direta para vendas via WhatsApp.',
-      tags: ['HTML', 'CSS', 'JavaScript', 'WhatsApp API'],
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-blue-500 to-cyan-500',
+      link: 'https://canario-contabilidade.netlify.app/'
     },
     {
       category: 'Gastronomia',
-      title: 'Cardápio Digital para Cafeteria',
-      description: 'Implementação de um cardápio digital com QR Code para uma cafeteria, permitindo fácil atualização e visualização dos produtos.',
+      title: 'Cardápio Digital',
+      description: 'Implementação de um cardápio digital com QR Code para restaurantes e cafeterias, permitindo fácil atualização e visualização dos produtos.',
       tags: ['React', 'Firebase', 'QR Code', 'Painel Admin'],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      link: 'https://seven-cardapio.netlify.app/'
     },
     {
       category: 'Serviços',
-      title: 'Landing Page para Lançamento de Curso',
-      description: 'Desenvolvimento de uma landing page de alta conversão para o lançamento de um curso online, com foco em captação de inscrições.',
+      title: 'Landing Page',
+      description: 'Desenvolvimento de uma landing page de alta conversão para o lançamento de um produto ou serviço, com foco em captação de inscrições.',
       tags: ['Next.js', 'Tailwind CSS', 'Formulários', 'Marketing'],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      category: 'Negócios Locais',
-      title: 'Site para Salão de Beleza',
-      description: 'Criação de um site elegante para um salão de beleza, com informações sobre serviços, galeria de fotos e formulário de contato.',
-      tags: ['WordPress', 'Elementor', 'Responsivo', 'Galeria'],
-      color: 'from-pink-500 to-red-400'
+      color: 'from-purple-500 to-pink-500',
+      link: 'https://louresadv.com.br/'
     },
     {
       category: 'Tecnologia',
-      title: 'Portfólio Online para Desenvolvedor',
+      title: 'Site para Portfólio Profissional',
       description: 'Desenvolvimento de um portfólio pessoal para um desenvolvedor, destacando projetos, habilidades e informações de contato.',
       tags: ['React', 'TypeScript', 'Vite', 'Animações'],
-      color: 'from-[#0EA5E9] to-blue-400'
+      color: 'from-[#0EA5E9] to-blue-400',
+      link: '' // Sem redirecionamento por enquanto
     }
   ];
 
@@ -154,13 +144,28 @@ export default function Portfolio() {
                 </div>
 
                 {/* Botão de ação */}
-                <button className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2">
-                  <span className="font-semibold text-sm">Ver detalhes</span>
-                  <ExternalLink
-                    size={16}
-                    className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                  />
-                </button>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                  >
+                    <span className="font-semibold text-sm">Ver detalhes</span>
+                    <ExternalLink
+                      size={16}
+                      className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </a>
+                ) : (
+                  <button className="group/btn inline-flex items-center space-x-2 text-gray-500 cursor-not-allowed pt-2">
+                    <span className="font-semibold text-sm">Ver detalhes</span>
+                    <ExternalLink
+                      size={16}
+                      className=""
+                    />
+                  </button>
+                )}
               </div>
             </div>
           ))}
