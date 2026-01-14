@@ -1,7 +1,10 @@
 import { Globe, Zap, QrCode, ShoppingBag, Settings } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 // Seção de Serviços com cards detalhados
 export default function Services() {
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: Globe,
@@ -9,7 +12,8 @@ export default function Services() {
       description:
         'Sites completos, responsivos e otimizados para sua empresa ou negócio. Design moderno, carregamento rápido e totalmente personalizável para destacar sua marca.',
       features: ['Design Responsivo', 'SEO Otimizado', 'Performance Premium'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      action: () => { /* Ação padrão ou navegação */ }
     },
     {
       icon: Zap,
@@ -17,7 +21,8 @@ export default function Services() {
       description:
         'Páginas focadas em conversão para capturar leads e aumentar suas vendas. Ideal para campanhas, lançamentos de produtos ou serviços específicos.',
       features: ['Alta Conversão', 'Mini Blog personalizado', 'Design Responsivo'],
-      color: 'from-[#0EA5E9] to-blue-600'
+      color: 'from-[#0EA5E9] to-blue-600',
+      action: () => navigate('/projetos/landing-pages') // Nova ação de navegação
     },
     {
       icon: QrCode,
@@ -25,7 +30,8 @@ export default function Services() {
       description:
         'Cardápios digitais modernos para restaurantes e lanchonetes. Seus clientes acessam o menu pelo celular usando QR Code, sem contato físico e com fotos atrativas.',
       features: ['QR Code Incluído', 'Fotos dos Pratos', 'Fácil Atualização', 'Painel Administrativo Exclusivo'],
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-green-500 to-emerald-600',
+      action: () => { /* Ação padrão ou navegação */ }
     },
     {
       icon: ShoppingBag,
@@ -33,7 +39,8 @@ export default function Services() {
       description:
         'Catálogos virtuais de produtos com fotos, descrições e preços. Botão direto para WhatsApp em cada produto para facilitar a venda e o atendimento ao cliente.',
       features: ['Botão WhatsApp', 'Galeria de Produtos', 'Gestão Simples'],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      action: () => { /* Ação padrão ou navegação */ }
     },
     {
       icon: Settings,
@@ -41,7 +48,8 @@ export default function Services() {
       description:
         'Desenvolvimento de pequenos sistemas personalizados para otimizar processos internos, como controle de estoque, agendamentos ou gestão de clientes.',
       features: ['Controle Personalizado', 'Otimização de Processos', 'Integração com APIs'],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      action: () => { /* Ação padrão ou navegação */ }
     }
   ];
 
@@ -73,7 +81,8 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#0EA5E9]/10 flex flex-col"
+                className="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#0EA5E9]/10 flex flex-col cursor-pointer"
+                onClick={service.action}
               >
                 {/* Ícone do serviço */}
                 <div className="mb-6">
