@@ -1,4 +1,4 @@
-import { Quote, Star, ArrowRight } from 'lucide-react';
+import { Quote, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import TestimonialModal from './TestimonialModal';
 
@@ -36,7 +36,7 @@ export default function Testimonials() {
       rating: 5,
       avatar: 'RC',
       shortContent:
-        'Quero registrar aqui toda a minha admiração e gratidão pelo trabalho extraordinário que você realizou. O site ficou moderno, leve, intuitivo e visualmente impecável. Sua sensibilidade e capacidade de transformar conceitos em experiências reais foram notáveis.',
+        'Quero registrar aqui toda a minha admiração e gratidão pelo trabalho extraordinário que você realizou. O site ficou moderno, leve, intuitivo e visualmente impecável.',
     }
   ];
 
@@ -72,6 +72,9 @@ export default function Testimonials() {
             // Verifica se o conteúdo completo é maior que o conteúdo curto
             const isLongTestimonial = testimonial.content.length > testimonial.shortContent.length;
             
+            // Texto a ser exibido no card
+            const cardText = testimonial.shortContent + (isLongTestimonial ? '...' : '');
+
             return (
               <div
                 key={index}
@@ -84,16 +87,9 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                {/* Avaliação com estrelas */}
-                <div className="flex space-x-1 mb-6 mt-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={18} className="fill-yellow-500 text-yellow-500" />
-                  ))}
-                </div>
-
                 {/* Conteúdo do depoimento - Usando shortContent e line-clamp para garantir o tamanho */}
                 <p className="text-gray-300 leading-relaxed mb-4 italic flex-grow line-clamp-6">
-                  "{testimonial.shortContent}"
+                  "{cardText}"
                 </p>
                 
                 {/* Botão Ver Mais (só se for longo) */}
