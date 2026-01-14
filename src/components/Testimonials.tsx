@@ -19,14 +19,14 @@ export default function Testimonials() {
         'Davi, passando para te dar um feedback referente ao site... Ficou maravilhoso, só elogios 😍. Ficou lindo, funcional e o sistema do blog está ajudando demais. Só tenho a agradecer pela atenção e trabalho!!!! 💖💖💖',
     },
     {
-      name: 'Igor Morais',
-      role: 'Cliente Satisfeito',
+      name: 'Thaís',
+      role: 'Seven Beer',
       content:
-        'Irmão ficou perfeito o site, muito bem detalhado, da pra ver que tu faz com carinho, estética ótima, não trava, ela vai amar viu tu é dedicado demais',
+        'O cardápio ficou ótimo, super organizado e prático. Ajudou muito no nosso dia a dia. E o painel ADM também ficou excelente, bem intuitivo e funcional. Seu trabalho fez muita diferença!',
       rating: 5,
-      avatar: 'IM',
+      avatar: 'TS',
       shortContent:
-        'Irmão ficou perfeito o site, muito bem detalhado, da pra ver que tu faz com carinho, estética ótima, não trava, ela vai amar viu tu é dedicado demais',
+        'O cardápio ficou ótimo, super organizado e prático. Ajudou muito no nosso dia a dia. E o painel ADM também ficou excelente, bem intuitivo e funcional. Seu trabalho fez muita diferença!',
     },
     {
       name: 'Rafael Cruz',
@@ -37,6 +37,16 @@ export default function Testimonials() {
       avatar: 'RC',
       shortContent:
         'Quero registrar aqui toda a minha admiração e gratidão pelo trabalho extraordinário que você realizou. O site ficou moderno, leve, intuitivo e visualmente impecável.',
+    },
+    {
+      name: 'Igor Morais',
+      role: 'Cliente Satisfeito',
+      content:
+        'Irmão ficou perfeito o site, muito bem detalhado, da pra ver que tu faz com carinho, estética ótima, não trava, ela vai amar viu tu é dedicado demais',
+      rating: 5,
+      avatar: 'IM',
+      shortContent:
+        'Irmão ficou perfeito o site, muito bem detalhado, da pra ver que tu faz com carinho, estética ótima, não trava, ela vai amar viu tu é dedicado demais',
     }
   ];
 
