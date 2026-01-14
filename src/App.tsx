@@ -7,7 +7,6 @@ import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import ProjectDetails from './pages/ProjectDetails';
 
 // Componente principal que organiza todas as seções do site
 function Home() {
@@ -33,7 +32,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projetos/:category" element={<ProjectDetails />} />
         </Routes>
       </Router>
     </div>

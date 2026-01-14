@@ -1,9 +1,8 @@
 import { Globe, Zap, QrCode, ShoppingBag, Settings } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 // Seção de Serviços com cards detalhados
 export default function Services() {
-  const navigate = useNavigate();
+  // Removido: const navigate = useNavigate();
 
   const services = [
     {
@@ -22,7 +21,7 @@ export default function Services() {
         'Páginas focadas em conversão para capturar leads e aumentar suas vendas. Ideal para campanhas, lançamentos de produtos ou serviços específicos.',
       features: ['Alta Conversão', 'Mini Blog personalizado', 'Design Responsivo'],
       color: 'from-[#0EA5E9] to-blue-600',
-      action: () => navigate('/projetos/landing-pages') // Nova ação de navegação
+      action: () => { /* Ação padrão ou navegação */ } // Ação removida
     },
     {
       icon: QrCode,

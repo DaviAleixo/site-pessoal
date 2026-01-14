@@ -1,7 +1,42 @@
 import { ExternalLink, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import ProjectModal from './ProjectModal';
+
+// Dados mockados para Landing Pages (usados no modal)
+const landingPageProjects = [
+  {
+    id: 1,
+    title: 'Loures Advocacia - Landing Page',
+    description: 'Landing page de alta conversão focada em captação de clientes para serviços jurídicos.',
+    tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
+    color: 'from-purple-500 to-pink-500',
+    link: 'https://louresadv.com.br/',
+    imageMockup: 'bg-purple-900/50'
+  },
+  {
+    id: 2,
+    title: 'Lançamento de Produto X',
+    description: 'Página de vendas otimizada para o lançamento de um novo produto digital, com foco em escassez e prova social.',
+    tags: ['React', 'SEO', 'Hotjar', 'Copywriting'],
+    color: 'from-red-500 to-orange-500',
+    link: '#',
+    imageMockup: 'bg-red-900/50'
+  },
+  {
+    id: 3,
+    title: 'Serviço de Consultoria',
+    description: 'Landing page para consultores, com agendamento integrado e foco em autoridade profissional.',
+    tags: ['Next.js', 'TypeScript', 'Calendly', 'Design Clean'],
+    color: 'from-cyan-500 to-blue-500',
+    link: '#',
+    imageMockup: 'bg-cyan-900/50'
+  }
+];
 
 // Seção de Portfólio com projetos fictícios realistas
 export default function Portfolio() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const whatsappNumber = '5531982607426';
   const whatsappMessage = encodeURIComponent(
     'Olá Davi! Vi seu site e gostaria de conversar sobre um projeto.'
@@ -21,7 +56,8 @@ export default function Portfolio() {
       description: 'Criação de sistemas de catálogo de vendas personalizados para gestão de produtos e pedidos, otimizando processos e vendas.',
       tags: ['React', 'Supabase', 'Painel Admin', 'Controle de Estoque'],
       color: 'from-green-500 to-teal-500',
-      link: 'https://pollyanabc.netlify.app/'
+      link: 'https://pollyanabc.netlify.app/',
+      action: null
     },
     {
       category: 'Gastronomia',
@@ -29,7 +65,8 @@ export default function Portfolio() {
       description: 'Implementação de um cardápio digital com QR Code para restaurantes e cafeterias, permitindo fácil atualização e visualização dos produtos.',
       tags: ['React', 'Supabase', 'QR Code', 'Painel Admin'],
       color: 'from-orange-500 to-red-500',
-      link: 'https://seven-cardapio.netlify.app/'
+      link: 'https://seven-cardapio.netlify.app/',
+      action: null
     },
     {
       category: 'Serviços',
@@ -37,7 +74,8 @@ export default function Portfolio() {
       description: 'Desenvolvimento de uma landing page de alta conversão para o lançamento de um produto ou serviço, com foco em captação de inscrições.',
       tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
       color: 'from-purple-500 to-pink-500',
-      link: 'https://louresadv.com.br/'
+      link: 'https://louresadv.com.br/',
+      action: () => setIsModalOpen(true) // Abre o modal
     },
     {
       category: 'Tecnologia',
@@ -45,7 +83,8 @@ export default function Portfolio() {
       description: 'Desenvolvimento de um portfólio pessoal para um desenvolvedor, destacando projetos, habilidades e informações de contato.',
       tags: ['React', 'TypeScript', 'Vite', 'Animações'],
       color: 'from-[#0EA5E9] to-blue-400',
-      link: 'https://rafaelcruz.netlify.app/'
+      link: 'https://rafaelcruz.netlify.app/',
+      action: null
     }
   ];
 
@@ -145,7 +184,18 @@ export default function Portfolio() {
 
                 {/* Botão de ação */}
                 <div className="mt-auto">
-                  {project.link ? (
+                  {project.action ? (
+                    <button
+                      onClick={project.action}
+                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                    >
+                      <span className="font-semibold text-sm">Ver detalhes</span>
+                      <ExternalLink
+                        size={16}
+                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                      />
+                    </button>
+                  ) : project.link ? (
                     <a
                       href={project.link}
                       target="_blank"
@@ -187,6 +237,14 @@ export default function Portfolio() {
           </button>
         </div>
       </div>
+      
+      {/* Modal de Projetos */}
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        projects={landingPageProjects}
+        title="Projetos de Landing Pages"
+      />
     </section>
   );
 }
