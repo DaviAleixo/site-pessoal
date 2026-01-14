@@ -35,7 +35,7 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Eu crio sites profissionais que{' '}
+              Eu crio soluções digitais que{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0EA5E9] to-blue-400">
                 vendem por você
               </span>

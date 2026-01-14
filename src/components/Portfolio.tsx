@@ -43,15 +43,6 @@ const catalogProjects = [
     color: 'from-green-500 to-teal-500',
     link: 'https://pollyanabc.netlify.app/',
     imageMockup: 'bg-green-900/50'
-  },
-  {
-    id: 11,
-    title: 'Catálogo de Produtos Artesanais',
-    description: 'Sistema simples para gestão e exibição de produtos artesanais, focado em pequenos empreendedores.',
-    tags: ['Vue.js', 'Firebase', 'Gestão Simples'],
-    color: 'from-yellow-500 to-orange-500',
-    link: '#',
-    imageMockup: 'bg-yellow-900/50'
   }
 ];
 
@@ -64,15 +55,6 @@ const menuProjects = [
     color: 'from-orange-500 to-red-500',
     link: 'https://seven-cardapio.netlify.app/',
     imageMockup: 'bg-orange-900/50'
-  },
-  {
-    id: 21,
-    title: 'Cardápio Cafeteria Gourmet',
-    description: 'Cardápio interativo para cafeteria, com destaque para fotos de alta qualidade e opções de personalização.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    color: 'from-amber-500 to-yellow-600',
-    link: '#',
-    imageMockup: 'bg-amber-900/50'
   }
 ];
 
@@ -85,15 +67,6 @@ const portfolioProjects = [
     color: 'from-[#0EA5E9] to-blue-400',
     link: 'https://rafaelcruz.netlify.app/',
     imageMockup: 'bg-blue-900/50'
-  },
-  {
-    id: 31,
-    title: 'Portfólio Designer UX/UI',
-    description: 'Página focada em design e experiência do usuário para um profissional de UX/UI.',
-    tags: ['Figma', 'Webflow', 'Design'],
-    color: 'from-pink-500 to-purple-500',
-    link: '#',
-    imageMockup: 'bg-pink-900/50'
   }
 ];
 
