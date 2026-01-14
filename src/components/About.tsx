@@ -48,12 +48,11 @@ export default function About() {
               <p>
                 Meu nome é <span className="text-white font-semibold">Davi Aleixo</span>, sou desenvolvedor
                 especializado em criar soluções digitais modernas, bonitas e funcionais, como sites,
-                catálogos de vendas e cardápios digitais, para pequenos negócios e profissionais autônomos.
+                catálogos de vendas, cardápios digitais e mini sistemas de gestão personalizados.
               </p>
 
               <p>
-                Trabalho com dedicação oferecendo soluções simples, práticas e eficientes que
-                realmente fazem a diferença para meus clientes. Cada projeto é desenvolvido
+                Meu foco é desenvolver sistemas sob medida para resolver a dor específica do cliente, otimizando processos internos e facilitando a gestão do negócio. Cada projeto é desenvolvido
                 pensando em conversão, usabilidade e design profissional.
               </p>
 
@@ -117,7 +116,7 @@ export default function About() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#0EA5E9] rounded-full"></div>
-                  <span>Páginas personalizadas para negócios locais</span>
+                  <span>Mini sistemas de gestão personalizados</span>
                 </li>
               </ul>
             </div>
