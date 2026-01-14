@@ -36,7 +36,7 @@ export default function Testimonials() {
       rating: 5,
       avatar: 'RC',
       shortContent:
-        'Quero registrar aqui toda a minha admiração e gratidão pelo trabalho simplesmente extraordinário que você realizou no desenvolvimento do site da minha empresa. O resultado ficou muito além do que eu imaginava. O site ficou moderno, leve, intuitivo e visualmente impecável. A forma como você conseguiu captar exatamente o que eu queria mostra sua sensibilidade e capacidade de transformar conceitos em experiências reais.',
+        'Quero registrar aqui toda a minha admiração e gratidão pelo trabalho extraordinário que você realizou. O site ficou moderno, leve, intuitivo e visualmente impecável. Sua sensibilidade e capacidade de transformar conceitos em experiências reais foram notáveis.',
     }
   ];
 
@@ -69,6 +69,7 @@ export default function Testimonials() {
         {/* Grid de depoimentos */}
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => {
+            // Verifica se o conteúdo completo é maior que o conteúdo curto
             const isLongTestimonial = testimonial.content.length > testimonial.shortContent.length;
             
             return (
