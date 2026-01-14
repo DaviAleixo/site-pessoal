@@ -52,9 +52,8 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials,
                   </div>
 
                   {/* Conteúdo do depoimento */}
-                  {/* Removendo as aspas duplas do texto aqui */}
                   <p className="text-gray-300 leading-relaxed mb-4 italic flex-grow line-clamp-6 pt-4">
-                    {cardText}
+                    "{cardText}"
                   </p>
                   
                   {/* Botão Ver Mais (só se for longo) */}
