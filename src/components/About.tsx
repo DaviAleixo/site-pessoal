@@ -18,7 +18,7 @@ export default function About() {
             <div className="relative">
               <div className="relative w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden border-4 border-[#0EA5E9]/30 shadow-2xl shadow-[#0EA5E9]/20">
                 <img
-                  src="/davi-profile.jpg"
+                  src="/gemini_generated_image_k5pd6xk5pd6xk5pd.png"
                   alt="Davi Aleixo - Desenvolvedor Web"
                   className="w-full h-full object-cover"
                 />

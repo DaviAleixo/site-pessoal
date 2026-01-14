@@ -20,7 +20,7 @@ export default function Header() {
           {/* Logo e foto do perfil */}
           <div className="flex items-center space-x-3">
             <img
-              src="/davi-profile.jpg"
+              src="/gemini_generated_image_k5pd6xk5pd6xk5pd.png"
               alt="Davi Aleixo"
               className="w-10 h-10 rounded-full object-cover border-2 border-[#0EA5E9]"
             />
