@@ -34,7 +34,8 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials,
         <div className="flex touch-pan-y -ml-8">
           {testimonials.map((testimonial, index) => {
             const isLongTestimonial = testimonial.content.length > testimonial.shortContent.length;
-            const cardText = testimonial.shortContent + (isLongTestimonial ? '...' : '');
+            // Removendo as aspas do texto, pois o ícone Quote já serve como decoração
+            const cardText = testimonial.shortContent.replace(/^"|"$/g, '').trim() + (isLongTestimonial ? '...' : '');
 
             return (
               <div
@@ -42,18 +43,16 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials,
                 className="flex-shrink-0 flex-grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pl-8"
               >
                 <div
-                  className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300 flex flex-col h-full"
+                  className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 pt-12 hover:border-[#0EA5E9]/50 transition-all duration-300 flex flex-col h-full"
                 >
-                  {/* Ícone de aspas */}
-                  <div className="absolute -top-4 left-8">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#0EA5E9] to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                      <Quote size={24} className="text-white" />
-                    </div>
+                  {/* Ícone de aspas decorativo, agora posicionado dentro do card */}
+                  <div className="absolute top-4 left-8">
+                    <Quote size={32} className="text-[#0EA5E9] opacity-70" />
                   </div>
 
                   {/* Conteúdo do depoimento */}
                   <p className="text-gray-300 leading-relaxed mb-4 italic flex-grow line-clamp-6 pt-4">
-                    "{cardText}"
+                    {cardText}
                   </p>
                   
                   {/* Botão Ver Mais (só se for longo) */}
