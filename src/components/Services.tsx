@@ -1,4 +1,4 @@
-import { Globe, Zap, QrCode, ShoppingBag } from 'lucide-react';
+import { Globe, Zap, QrCode, ShoppingBag, Settings } from 'lucide-react';
 
 // Seção de Serviços com cards detalhados
 export default function Services() {
@@ -34,6 +34,14 @@ export default function Services() {
         'Catálogos virtuais de produtos com fotos, descrições e preços. Botão direto para WhatsApp em cada produto para facilitar a venda e o atendimento ao cliente.',
       features: ['Botão WhatsApp', 'Galeria de Produtos', 'Gestão Simples'],
       color: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: Settings,
+      title: 'Mini Sistemas de Gestão',
+      description:
+        'Desenvolvimento de pequenos sistemas personalizados para otimizar processos internos, como controle de estoque, agendamentos ou gestão de clientes.',
+      features: ['Controle Personalizado', 'Otimização de Processos', 'Integração com APIs'],
+      color: 'from-purple-500 to-pink-500'
     }
   ];
 
@@ -59,7 +67,7 @@ export default function Services() {
         </div>
 
         {/* Grid de serviços */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

@@ -17,11 +17,11 @@ export default function Portfolio() {
   const projects = [
     {
       category: 'Sistemas Web',
-      title: 'Catálogo de Vendas e Mini Sistemas',
-      description: 'Criação de sistemas de catálogo de vendas personalizados e mini-sistemas para gestão interna, otimizando processos e vendas.',
-      tags: ['React', 'Supabase', 'Gestão', 'E-commerce'],
+      title: 'Catálogo de Vendas',
+      description: 'Criação de sistemas de catálogo de vendas personalizados para gestão de produtos e pedidos, otimizando processos e vendas.',
+      tags: ['React', 'Supabase', 'Painel Admin', 'Controle de Estoque'],
       color: 'from-green-500 to-teal-500',
-      link: '' // Sem redirecionamento por enquanto
+      link: 'https://pollyanabc.netlify.app/'
     },
     {
       category: 'Gastronomia',
@@ -45,7 +45,7 @@ export default function Portfolio() {
       description: 'Desenvolvimento de um portfólio pessoal para um desenvolvedor, destacando projetos, habilidades e informações de contato.',
       tags: ['React', 'TypeScript', 'Vite', 'Animações'],
       color: 'from-[#0EA5E9] to-blue-400',
-      link: '' // Sem redirecionamento por enquanto
+      link: 'https://rafaelcruz.netlify.app/'
     }
   ];
 
@@ -66,7 +66,7 @@ export default function Portfolio() {
           </h2>
 
           <p className="text-xl text-gray-400">
-            Conheça alguns dos sites, catálogos e mini-sistemas desenvolvidos com qualidade e atenção aos detalhes
+            Conheça alguns dos sites e catálogos desenvolvidos com qualidade e atenção aos detalhes
           </p>
         </div>
 
