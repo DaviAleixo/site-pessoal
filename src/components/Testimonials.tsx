@@ -1,7 +1,12 @@
-import { Quote, Star } from 'lucide-react';
+import { Quote, Star, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import TestimonialModal from './TestimonialModal';
 
 // Seção de Depoimentos de clientes
 export default function Testimonials() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+
   const testimonials = [
     {
       name: 'Emanuelle',
@@ -28,6 +33,11 @@ export default function Testimonials() {
       avatar: 'RC'
     }
   ];
+
+  const openModal = (testimonial: any) => {
+    setSelectedTestimonial(testimonial);
+    setIsModalOpen(true);
+  };
 
   return (
     <section className="bg-black py-20 lg:py-32">
@@ -72,12 +82,25 @@ export default function Testimonials() {
               </div>
 
               {/* Conteúdo do depoimento */}
-              <p className="text-gray-300 leading-relaxed mb-6 italic flex-grow">
+              <p className="text-gray-300 leading-relaxed mb-4 italic flex-grow line-clamp-6">
                 "{testimonial.content}"
               </p>
+              
+              {/* Botão Ver Mais */}
+              <button
+                onClick={() => openModal(testimonial)}
+                className="mt-auto group/btn inline-flex items-center space-x-1 text-[#0EA5E9] hover:text-white transition-colors pt-2 font-semibold text-sm"
+              >
+                <span>Ver depoimento completo</span>
+                <ArrowRight
+                    size={16}
+                    className="group-hover/btn:translate-x-1 transition-transform"
+                  />
+              </button>
+
 
               {/* Informações do cliente */}
-              <div className="flex items-center space-x-4 pt-6 border-t border-gray-800 mt-auto">
+              <div className="flex items-center space-x-4 pt-6 border-t border-gray-800 mt-4">
                 {/* Avatar */}
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0EA5E9] to-blue-600 flex items-center justify-center flex-shrink-0">
                   <span className="text-white font-bold text-sm">
@@ -99,6 +122,13 @@ export default function Testimonials() {
         </div>
 
       </div>
+      
+      {/* Modal de Depoimento */}
+      <TestimonialModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        testimonial={selectedTestimonial}
+      />
     </section>
   );
 }
