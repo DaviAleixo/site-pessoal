@@ -42,7 +42,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-xl text-gray-400 leading-relaxed">
-              Landing pages, cardápios digitais e páginas personalizadas para destacar seu negócio.
+              Desenvolvo soluções digitais personalizadas para você, como landing pages, cardápios, catálogos de vendas e mini sistemas, resolvendo a dor específica do seu negócio.
             </p>
 
             {/* Botões de ação */}
