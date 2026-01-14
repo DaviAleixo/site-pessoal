@@ -16,12 +16,12 @@ export default function Portfolio() {
 
   const projects = [
     {
-      category: 'Web Design',
-      title: 'Site Institucional',
-      description: 'Desenvolvimento de um site moderno e responsivo para sua empresa, focado em apresentar serviços e capturar leads.',
-      tags: ['React', 'Tailwind CSS', 'Responsivo', 'SEO'],
-      color: 'from-blue-500 to-cyan-500',
-      link: 'https://canario-contabilidade.netlify.app/'
+      category: 'Sistemas Web',
+      title: 'Catálogo de Vendas e Mini Sistemas',
+      description: 'Criação de sistemas de catálogo de vendas personalizados e mini-sistemas para gestão interna, otimizando processos e vendas.',
+      tags: ['React', 'Supabase', 'Gestão', 'E-commerce'],
+      color: 'from-green-500 to-teal-500',
+      link: '' // Sem redirecionamento por enquanto
     },
     {
       category: 'Gastronomia',
@@ -66,7 +66,7 @@ export default function Portfolio() {
           </h2>
 
           <p className="text-xl text-gray-400">
-            Conheça alguns dos projetos desenvolvidos com qualidade e atenção aos detalhes
+            Conheça alguns dos sites, catálogos e mini-sistemas desenvolvidos com qualidade e atenção aos detalhes
           </p>
         </div>
 
