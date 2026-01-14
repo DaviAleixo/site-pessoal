@@ -30,15 +30,6 @@ const landingPageProjects = [
     color: 'from-cyan-500 to-blue-500',
     link: 'https://cleiberadvocacia.com.br/',
     imageMockup: 'bg-cyan-900/50'
-  },
-  {
-    id: 4,
-    title: 'Lançamento de Produto X',
-    description: 'Página de vendas otimizada para o lançamento de um novo produto digital, com foco em escassez e prova social.',
-    tags: ['React', 'SEO', 'Hotjar', 'Copywriting'],
-    color: 'from-green-500 to-teal-500',
-    link: '#',
-    imageMockup: 'bg-green-900/50'
   }
 ];
 

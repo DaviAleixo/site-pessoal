@@ -58,18 +58,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projects, 
                   {project.description}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full border border-gray-600"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
                 {/* Botão de link */}
                 <a
                   href={project.link}
