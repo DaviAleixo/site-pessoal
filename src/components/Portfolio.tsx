@@ -2,40 +2,32 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 
-// Dados mockados para Landing Pages (usados no modal)
-const landingPageProjects = [
-  {
-    id: 1,
-    title: 'Loures Advocacia - Landing Page',
-    description: 'Landing page de alta conversão focada em captação de clientes para serviços jurídicos.',
-    tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
-    color: 'from-purple-500 to-pink-500',
-    link: 'https://louresadv.com.br/',
-    imageMockup: 'bg-purple-900/50'
-  },
-  {
-    id: 2,
-    title: 'Maila Nails - Landing Page',
-    description: 'Página de agendamento e serviços para manicure, focada em design moderno e facilidade de contato.',
-    tags: ['React', 'Design Clean', 'Agendamento', 'WhatsApp'],
-    color: 'from-red-500 to-orange-500',
-    link: 'https://mailanails.netlify.app/',
-    imageMockup: 'bg-red-900/50'
-  },
-  {
-    id: 3,
-    title: 'Cleiber Advocacia - Landing Page',
-    description: 'Landing page profissional para escritório de advocacia, com foco em autoridade e serviços especializados.',
-    tags: ['Next.js', 'TypeScript', 'SEO', 'Design Clean'],
-    color: 'from-cyan-500 to-blue-500',
-    link: 'https://cleiberadvocacia.com.br/',
-    imageMockup: 'bg-cyan-900/50'
-  }
-];
+// Definindo a interface Project para consistência
+interface Project {
+  id: number;
+  category: string;
+  title: string;
+  description: string;
+  tags: string[];
+  color: string;
+  link: string;
+  action: ((project: Project) => void) | null;
+}
 
 // Seção de Portfólio com projetos fictícios realistas
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const handleOpenModal = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   const whatsappNumber = '5531982607426';
   const whatsappMessage = encodeURIComponent(
@@ -49,8 +41,10 @@ export default function Portfolio() {
     );
   };
 
-  const projects = [
+  // Dados dos projetos
+  const projects: Project[] = [
     {
+      id: 1,
       category: 'Sistemas Web',
       title: 'Catálogo de Vendas',
       description: 'Criação de sistemas de catálogo de vendas personalizados para gestão de produtos e pedidos, otimizando processos e vendas.',
@@ -60,6 +54,7 @@ export default function Portfolio() {
       action: null
     },
     {
+      id: 2,
       category: 'Gastronomia',
       title: 'Cardápio Digital',
       description: 'Implementação de um cardápio digital com QR Code para restaurantes e cafeterias, permitindo fácil atualização e visualização dos produtos.',
@@ -69,15 +64,17 @@ export default function Portfolio() {
       action: null
     },
     {
+      id: 3,
       category: 'Serviços',
       title: 'Landing Page',
       description: 'Desenvolvimento de uma landing page de alta conversão para o lançamento de um produto ou serviço, com foco em captação de inscrições.',
       tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
       color: 'from-purple-500 to-pink-500',
       link: 'https://louresadv.com.br/',
-      action: () => setIsModalOpen(true) // Abre o modal
+      action: null
     },
     {
+      id: 4,
       category: 'Tecnologia',
       title: 'Site para Portfólio Profissional',
       description: 'Desenvolvimento de um portfólio pessoal para um desenvolvedor, destacando projetos, habilidades e informações de contato.',
@@ -184,39 +181,16 @@ export default function Portfolio() {
 
                 {/* Botão de ação */}
                 <div className="mt-auto">
-                  {project.action ? (
-                    <button
-                      onClick={project.action}
-                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
-                    >
-                      <span className="font-semibold text-sm">Ver detalhes</span>
-                      <ExternalLink
-                        size={16}
-                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                      />
-                    </button>
-                  ) : project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
-                    >
-                      <span className="font-semibold text-sm">Ver detalhes</span>
-                      <ExternalLink
-                        size={16}
-                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                      />
-                    </a>
-                  ) : (
-                    <button className="group/btn inline-flex items-center space-x-2 text-gray-500 cursor-not-allowed pt-2">
-                      <span className="font-semibold text-sm">Ver detalhes</span>
-                      <ExternalLink
-                        size={16}
-                        className=""
-                      />
-                    </button>
-                  )}
+                  <button
+                    onClick={() => handleOpenModal(project)}
+                    className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                  >
+                    <span className="font-semibold text-sm">Ver detalhes</span>
+                    <ExternalLink
+                      size={16}
+                      className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </button>
                 </div>
               </div>
             </div>
@@ -241,9 +215,8 @@ export default function Portfolio() {
       {/* Modal de Projetos */}
       <ProjectModal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        projects={landingPageProjects}
-        title="Projetos de Landing Pages"
+        onClose={handleCloseModal}
+        project={selectedProject}
       />
     </section>
   );
