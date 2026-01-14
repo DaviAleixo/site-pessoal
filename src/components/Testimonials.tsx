@@ -20,12 +20,12 @@ export default function Testimonials() {
       avatar: 'IM'
     },
     {
-      name: 'Marcelo Augusto',
-      role: 'Empreendedor',
+      name: 'Rafael Cruz',
+      role: 'Fotógrafo',
       content:
-        'A landing page ficou exatamente como eu pedi, superou todas as minhas expectativas! O design é lindo e a funcionalidade impecável. Excelente trabalho!',
+        'Quero registrar aqui toda a minha admiração e gratidão pelo trabalho simplesmente extraordinário que você realizou no desenvolvimento do site da minha empresa. Desde o início, você demonstrou um profissionalismo admirável, sempre atento aos detalhes, aberto às minhas ideias e extremamente comprometido em entregar algo que realmente representasse a essência do meu negócio. O resultado ficou muito além do que eu imaginava. O site ficou moderno, leve, intuitivo e visualmente impecável. Cada seção tem identidade, propósito e clareza. A forma como você conseguiu captar exatamente o que eu queria muitas vezes até antes de eu saber explicar mostra não só seu talento técnico, mas também sua sensibilidade e capacidade de transformar conceitos em experiências reais',
       rating: 5,
-      avatar: 'MA'
+      avatar: 'RC'
     }
   ];
 
