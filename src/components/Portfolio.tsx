@@ -14,19 +14,48 @@ interface Project {
   action: ((project: Project) => void) | null;
 }
 
+// Dados mockados para Landing Pages (usados no modal)
+const landingPageProjects = [
+  {
+    id: 1,
+    title: 'Loures Advocacia - Landing Page',
+    description: 'Landing page de alta conversão focada em captação de clientes para serviços jurídicos.',
+    tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
+    color: 'from-purple-500 to-pink-500',
+    link: 'https://louresadv.com.br/',
+    imageMockup: 'bg-purple-900/50'
+  },
+  {
+    id: 2,
+    title: 'Maila Nails - Landing Page',
+    description: 'Página de agendamento e serviços para manicure, focada em design moderno e facilidade de contato.',
+    tags: ['React', 'Design Clean', 'Agendamento', 'WhatsApp'],
+    color: 'from-red-500 to-orange-500',
+    link: 'https://mailanails.netlify.app/',
+    imageMockup: 'bg-red-900/50'
+  },
+  {
+    id: 3,
+    title: 'Cleiber Advocacia - Landing Page',
+    description: 'Landing page profissional para escritório de advocacia, com foco em autoridade e serviços especializados.',
+    tags: ['Next.js', 'TypeScript', 'SEO', 'Design Clean'],
+    color: 'from-cyan-500 to-blue-500',
+    link: 'https://cleiberadvocacia.com.br/',
+    imageMockup: 'bg-cyan-900/50'
+  }
+];
+
 // Seção de Portfólio com projetos fictícios realistas
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  // Removendo selectedProject, pois o modal agora usa a lista landingPageProjects
 
-  const handleOpenModal = (project: Project) => {
-    setSelectedProject(project);
+  const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSelectedProject(null);
   };
 
   const whatsappNumber = '5531982607426';
@@ -51,7 +80,7 @@ export default function Portfolio() {
       tags: ['React', 'Supabase', 'Painel Admin', 'Controle de Estoque'],
       color: 'from-green-500 to-teal-500',
       link: 'https://pollyanabc.netlify.app/',
-      action: null
+      action: null // Link direto
     },
     {
       id: 2,
@@ -61,7 +90,7 @@ export default function Portfolio() {
       tags: ['React', 'Supabase', 'QR Code', 'Painel Admin'],
       color: 'from-orange-500 to-red-500',
       link: 'https://seven-cardapio.netlify.app/',
-      action: null
+      action: null // Link direto
     },
     {
       id: 3,
@@ -71,7 +100,7 @@ export default function Portfolio() {
       tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
       color: 'from-purple-500 to-pink-500',
       link: 'https://louresadv.com.br/',
-      action: null
+      action: () => handleOpenModal() // Abre o modal com a lista de Landing Pages
     },
     {
       id: 4,
@@ -81,7 +110,7 @@ export default function Portfolio() {
       tags: ['React', 'TypeScript', 'Vite', 'Animações'],
       color: 'from-[#0EA5E9] to-blue-400',
       link: 'https://rafaelcruz.netlify.app/',
-      action: null
+      action: null // Link direto
     }
   ];
 
@@ -181,16 +210,31 @@ export default function Portfolio() {
 
                 {/* Botão de ação */}
                 <div className="mt-auto">
-                  <button
-                    onClick={() => handleOpenModal(project)}
-                    className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
-                  >
-                    <span className="font-semibold text-sm">Ver detalhes</span>
-                    <ExternalLink
-                      size={16}
-                      className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                    />
-                  </button>
+                  {project.action ? (
+                    <button
+                      onClick={project.action}
+                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                    >
+                      <span className="font-semibold text-sm">Ver detalhes</span>
+                      <ExternalLink
+                        size={16}
+                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                      />
+                    </button>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                    >
+                      <span className="font-semibold text-sm">Acessar Projeto</span>
+                      <ExternalLink
+                        size={16}
+                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                      />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -216,7 +260,8 @@ export default function Portfolio() {
       <ProjectModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        project={selectedProject}
+        projects={landingPageProjects}
+        title="Projetos de Landing Pages"
       />
     </section>
   );
