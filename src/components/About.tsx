@@ -39,7 +39,7 @@ export default function About() {
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 Desenvolvedor focado em{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0EA5E9] to-blue-400">
-                  resultados reais
+                  soluções digitais
                 </span>
               </h2>
             </div>
@@ -47,8 +47,8 @@ export default function About() {
             <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
               <p>
                 Meu nome é <span className="text-white font-semibold">Davi Aleixo</span>, sou desenvolvedor
-                especializado em criar sites modernos, bonitos e funcionais para pequenos negócios,
-                profissionais autônomos e empresas que precisam de presença digital.
+                especializado em criar soluções digitais modernas, bonitas e funcionais, como sites,
+                catálogos de vendas e cardápios digitais, para pequenos negócios e profissionais autônomos.
               </p>
 
               <p>

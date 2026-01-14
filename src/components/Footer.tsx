@@ -35,8 +35,8 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-white font-bold text-xl mb-4">Davi Aleixo</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Desenvolvedor profissional criando sites modernos e funcionais para
-              impulsionar negócios em todo o Brasil.
+              Desenvolvedor profissional criando soluções digitais modernas e funcionais, como sites,
+              catálogos e cardápios, para impulsionar negócios em todo o Brasil.
             </p>
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
