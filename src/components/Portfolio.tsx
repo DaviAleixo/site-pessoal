@@ -15,21 +15,30 @@ const landingPageProjects = [
   },
   {
     id: 2,
-    title: 'Lançamento de Produto X',
-    description: 'Página de vendas otimizada para o lançamento de um novo produto digital, com foco em escassez e prova social.',
-    tags: ['React', 'SEO', 'Hotjar', 'Copywriting'],
+    title: 'Maila Nails - Landing Page',
+    description: 'Página de agendamento e serviços para manicure, focada em design moderno e facilidade de contato.',
+    tags: ['React', 'Design Clean', 'Agendamento', 'WhatsApp'],
     color: 'from-red-500 to-orange-500',
-    link: '#',
+    link: 'https://mailanails.netlify.app/',
     imageMockup: 'bg-red-900/50'
   },
   {
     id: 3,
-    title: 'Serviço de Consultoria',
-    description: 'Landing page para consultores, com agendamento integrado e foco em autoridade profissional.',
-    tags: ['Next.js', 'TypeScript', 'Calendly', 'Design Clean'],
+    title: 'Cleiber Advocacia - Landing Page',
+    description: 'Landing page profissional para escritório de advocacia, com foco em autoridade e serviços especializados.',
+    tags: ['Next.js', 'TypeScript', 'SEO', 'Design Clean'],
     color: 'from-cyan-500 to-blue-500',
-    link: '#',
+    link: 'https://cleiberadvocacia.com.br/',
     imageMockup: 'bg-cyan-900/50'
+  },
+  {
+    id: 4,
+    title: 'Lançamento de Produto X',
+    description: 'Página de vendas otimizada para o lançamento de um novo produto digital, com foco em escassez e prova social.',
+    tags: ['React', 'SEO', 'Hotjar', 'Copywriting'],
+    color: 'from-green-500 to-teal-500',
+    link: '#',
+    imageMockup: 'bg-green-900/50'
   }
 ];
 
@@ -145,7 +154,7 @@ export default function Portfolio() {
                       <div className="h-2 bg-gray-700 rounded w-3/4"></div>
                     </div>
                     <div className="bg-gray-800 rounded-lg p-3 space-y-2">
-                      <div className={`w-6 h-6 bg-gradient-to-r ${project.color} rounded`}></div>
+                      <div class={`w-6 h-6 bg-gradient-to-r ${project.color} rounded`}></div>
                       <div className="h-2 bg-gray-700 rounded w-3/4"></div>
                     </div>
                   </div>

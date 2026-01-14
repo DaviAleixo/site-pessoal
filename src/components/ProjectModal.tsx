@@ -45,9 +45,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projects, 
                 key={project.id}
                 className="group relative bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 hover:border-[#0EA5E9]/50 transition-all duration-300 flex flex-col"
               >
-                {/* Mockup visual simples */}
-                <div className={`h-32 rounded-lg mb-6 ${project.imageMockup} flex items-center justify-center`}>
-                    <span className="text-gray-500 text-sm">Visual Mockup</span>
+                {/* Ícone decorativo no lugar do mockup */}
+                <div className={`w-12 h-12 rounded-lg mb-6 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+                    <ExternalLink size={24} className="text-white" />
                 </div>
 
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#0EA5E9] transition-colors">
