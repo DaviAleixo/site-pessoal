@@ -5,7 +5,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  tags: string[];
+  tags: string[]; // Mantemos a interface, mas não renderizamos
   color: string;
   link: string;
   imageMockup: string;
@@ -36,7 +36,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projects, 
         {/* Conteúdo do Modal - Grid de Projetos */}
         <div className="p-6 md:p-8">
           <p className="text-gray-400 mb-8">
-            Explore alguns exemplos de Landing Pages de alta conversão que desenvolvi.
+            Explore alguns exemplos de projetos que desenvolvi nesta categoria.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -45,7 +45,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projects, 
                 key={project.id}
                 className="group relative bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 hover:border-[#0EA5E9]/50 transition-all duration-300 flex flex-col"
               >
-                {/* Ícone decorativo no lugar do mockup */}
+                {/* Ícone decorativo */}
                 <div className={`w-12 h-12 rounded-lg mb-6 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
                     <ExternalLink size={24} className="text-white" />
                 </div>

@@ -2,7 +2,8 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 
-// Dados mockados para Landing Pages (usados no modal)
+// --- Dados Mockados para Modais ---
+
 const landingPageProjects = [
   {
     id: 1,
@@ -33,9 +34,81 @@ const landingPageProjects = [
   }
 ];
 
+const catalogProjects = [
+  {
+    id: 10,
+    title: 'Catálogo Pollyana BC',
+    description: 'Catálogo de vendas personalizado para loja de roupas, com integração direta via WhatsApp.',
+    tags: ['React', 'Supabase', 'Painel Admin', 'Controle de Estoque'],
+    color: 'from-green-500 to-teal-500',
+    link: 'https://pollyanabc.netlify.app/',
+    imageMockup: 'bg-green-900/50'
+  },
+  {
+    id: 11,
+    title: 'Catálogo de Produtos Artesanais',
+    description: 'Sistema simples para gestão e exibição de produtos artesanais, focado em pequenos empreendedores.',
+    tags: ['Vue.js', 'Firebase', 'Gestão Simples'],
+    color: 'from-yellow-500 to-orange-500',
+    link: '#',
+    imageMockup: 'bg-yellow-900/50'
+  }
+];
+
+const menuProjects = [
+  {
+    id: 20,
+    title: 'Seven Cardápio Digital',
+    description: 'Cardápio digital moderno com QR Code para um restaurante, permitindo fácil atualização e visualização.',
+    tags: ['React', 'Supabase', 'QR Code', 'Painel Admin'],
+    color: 'from-orange-500 to-red-500',
+    link: 'https://seven-cardapio.netlify.app/',
+    imageMockup: 'bg-orange-900/50'
+  },
+  {
+    id: 21,
+    title: 'Cardápio Cafeteria Gourmet',
+    description: 'Cardápio interativo para cafeteria, com destaque para fotos de alta qualidade e opções de personalização.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    color: 'from-amber-500 to-yellow-600',
+    link: '#',
+    imageMockup: 'bg-amber-900/50'
+  }
+];
+
+const portfolioProjects = [
+  {
+    id: 30,
+    title: 'Portfólio Rafael Cruz',
+    description: 'Portfólio pessoal desenvolvido para um desenvolvedor front-end, destacando projetos e habilidades.',
+    tags: ['React', 'TypeScript', 'Vite', 'Animações'],
+    color: 'from-[#0EA5E9] to-blue-400',
+    link: 'https://rafaelcruz.netlify.app/',
+    imageMockup: 'bg-blue-900/50'
+  },
+  {
+    id: 31,
+    title: 'Portfólio Designer UX/UI',
+    description: 'Página focada em design e experiência do usuário para um profissional de UX/UI.',
+    tags: ['Figma', 'Webflow', 'Design'],
+    color: 'from-pink-500 to-purple-500',
+    link: '#',
+    imageMockup: 'bg-pink-900/50'
+  }
+];
+
 // Seção de Portfólio com projetos fictícios realistas
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState({
+    title: '',
+    projects: [] as typeof landingPageProjects,
+  });
+
+  const openModal = (title: string, projects: typeof landingPageProjects) => {
+    setModalData({ title, projects });
+    setIsModalOpen(true);
+  };
 
   const whatsappNumber = '5531982607426';
   const whatsappMessage = encodeURIComponent(
@@ -57,7 +130,7 @@ export default function Portfolio() {
       tags: ['React', 'Supabase', 'Painel Admin', 'Controle de Estoque'],
       color: 'from-green-500 to-teal-500',
       link: 'https://pollyanabc.netlify.app/',
-      action: null
+      action: () => openModal('Projetos de Catálogo de Vendas', catalogProjects)
     },
     {
       category: 'Gastronomia',
@@ -66,7 +139,7 @@ export default function Portfolio() {
       tags: ['React', 'Supabase', 'QR Code', 'Painel Admin'],
       color: 'from-orange-500 to-red-500',
       link: 'https://seven-cardapio.netlify.app/',
-      action: null
+      action: () => openModal('Projetos de Cardápio Digital', menuProjects)
     },
     {
       category: 'Serviços',
@@ -75,7 +148,7 @@ export default function Portfolio() {
       tags: ['Angular', 'Tailwind CSS', 'Formulários', 'Marketing'],
       color: 'from-purple-500 to-pink-500',
       link: 'https://louresadv.com.br/',
-      action: () => setIsModalOpen(true) // Abre o modal
+      action: () => openModal('Projetos de Landing Pages', landingPageProjects)
     },
     {
       category: 'Tecnologia',
@@ -84,7 +157,7 @@ export default function Portfolio() {
       tags: ['React', 'TypeScript', 'Vite', 'Animações'],
       color: 'from-[#0EA5E9] to-blue-400',
       link: 'https://rafaelcruz.netlify.app/',
-      action: null
+      action: () => openModal('Projetos de Portfólio Pessoal', portfolioProjects)
     }
   ];
 
@@ -184,39 +257,17 @@ export default function Portfolio() {
 
                 {/* Botão de ação */}
                 <div className="mt-auto">
-                  {project.action ? (
-                    <button
-                      onClick={project.action}
-                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
-                    >
-                      <span className="font-semibold text-sm">Ver detalhes</span>
-                      <ExternalLink
-                        size={16}
-                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                      />
-                    </button>
-                  ) : project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
-                    >
-                      <span className="font-semibold text-sm">Ver detalhes</span>
-                      <ExternalLink
-                        size={16}
-                        className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                      />
-                    </a>
-                  ) : (
-                    <button className="group/btn inline-flex items-center space-x-2 text-gray-500 cursor-not-allowed pt-2">
-                      <span className="font-semibold text-sm">Ver detalhes</span>
-                      <ExternalLink
-                        size={16}
-                        className=""
-                      />
-                    </button>
-                  )}
+                  {/* Agora todos usam a ação para abrir o modal */}
+                  <button
+                    onClick={project.action}
+                    className="group/btn inline-flex items-center space-x-2 text-[#0EA5E9] hover:text-white transition-colors pt-2"
+                  >
+                    <span className="font-semibold text-sm">Ver detalhes</span>
+                    <ExternalLink
+                      size={16}
+                      className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+                    />
+                  </button>
                 </div>
               </div>
             </div>
@@ -242,8 +293,8 @@ export default function Portfolio() {
       <ProjectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        projects={landingPageProjects}
-        title="Projetos de Landing Pages"
+        projects={modalData.projects}
+        title={modalData.title}
       />
     </section>
   );
